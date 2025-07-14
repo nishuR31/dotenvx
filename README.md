@@ -6,7 +6,8 @@
 
 <br>
 
-> Modern `.env` management with encryption, environment layering, and convention-based loading. Secure secrets even in public repos.
+>> Modern `.env` management with encryption, environment layering, and convention-based loading. Secure secrets even in public repos.
+> Advanced `.env` on steroids.
 
 <br>
 <hr>
@@ -36,6 +37,10 @@ Global install (optional):
 npm install -g @dotenvx/dotenvx
 ```
 
+## Note 
+Use `npx @dotenvx/dotenvx` if using the module without global install
+Use `dotenvx` if using global install
+
 <br>
 <hr>
 <br>
@@ -47,11 +52,17 @@ npm install -g @dotenvx/dotenvx
 ```bash
 dotenvx run -- node index.js
 ```
+```bash
+npx @dotenvx/dotenvx run -- node index.js
+```
 
 With multiple `.env` files (last overrides first):
 
 ```bash
 dotenvx run -f .env.local -f .env -- node app.js
+```
+```bash
+npx @dotenvx/dotenvx run -f .env.local -f .env -- node app.js
 ```
 
 ###  Encrypt / Decrypt `.env` Files
@@ -60,6 +71,9 @@ dotenvx run -f .env.local -f .env -- node app.js
 
 ```bash
 dotenvx encrypt -f .env
+```
+```bash
+npx @dotenvx/dotenvx encrypt -f .env
 ```
 
 This creates:
@@ -71,6 +85,9 @@ This creates:
 
 ```bash
 dotenvx decrypt -f .env
+```
+```bash
+@dotenvx/dotenvx decrypt -f .env
 ```
 
 <br>
@@ -101,7 +118,7 @@ dotenvx decrypt -f .env
 ```js
 import dotenvx from '@dotenvx/dotenvx';
 
-dotenvx.config({ path: '.env', overload: true });
+dotenvx.config({ path: '.env', overload: true,debug:true });
 console.log('Loaded:', process.env.API_KEY);
 ```
 
@@ -146,6 +163,9 @@ console.log('Loaded:', process.env.API_KEY);
 ```bash
 npx @dotenvx/dotenvx ext gitignore --pattern .env.keys #to gitignore .env.keys
 ```
+```bash
+dotenvx ext gitignore --pattern .env.keys #to gitignore .env.keys
+```
 
 >  You can safely commit `.env.enc` to version control as it's encrypted.
 
@@ -173,11 +193,6 @@ npx @dotenvx/dotenvx ext gitignore --pattern .env.keys #to gitignore .env.keys
 <hr>
 <br>
 
-##  Made for Devs Who Care About Security
-
-```bash
-npm install @dotenvx/dotenvx
-```
 
 > PRs welcome! Star the repo 🌟 if you found it useful.
 
