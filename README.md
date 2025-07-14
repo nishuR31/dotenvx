@@ -6,7 +6,7 @@
 
 <br>
 
->> Modern `.env` management with encryption, environment layering, and convention-based loading. Secure secrets even in public repos.
+> Modern `.env` management with encryption, environment layering, and convention-based loading. Secure secrets even in public repos.
 > Advanced `.env` on steroids.
 
 <br>
@@ -78,7 +78,7 @@ npx @dotenvx/dotenvx encrypt -f .env
 
 This creates:
 
-* `.env.enc` – Encrypted version (✅ safe to commit)
+* `.env` or `.env.enc` – Encrypted version (✅ safe to commit)
 * `.env.keys` – Private key (❌ do not commit)
 
 #### Decrypt:
@@ -105,6 +105,18 @@ dotenvx decrypt -f .env
     "decrypt": "dotenvx decrypt -f .env",
     "rotate": "dotenvx rotate -f .env",
     "your command": "dotenvx run -- your command"
+  }
+}
+```
+```json
+{
+  "scripts": {
+    "dev": "npx @dotenvx/dotenvx run -- node index.js",
+    "build": "npx @dotenvx/dotenvx run -f .env.production -- node build.js",
+    "encrypt": "npx @dotenvx/dotenvx encrypt -f .env",
+    "decrypt": "npx @dotenvx/dotenvx decrypt -f .env",
+    "rotate": "npx @dotenvx/dotenvx rotate -f .env",
+    "your command": "npx @dotenvx/dotenvx run -- your command"
   }
 }
 ```
@@ -161,13 +173,13 @@ console.log('Loaded:', process.env.API_KEY);
 ```
 
 ```bash
-npx @dotenvx/dotenvx ext gitignore --pattern .env.keys #to gitignore .env.keys
+npx @dotenvx/dotenvx ext gitignore --pattern .env.keys #add to gitignore .env.keys
 ```
 ```bash
-dotenvx ext gitignore --pattern .env.keys #to gitignore .env.keys
+dotenvx ext gitignore --pattern .env.keys #add to gitignore .env.keys
 ```
 
->  You can safely commit `.env.enc` to version control as it's encrypted.
+>  You can safely commit `.env.enc` to version control as it's encrypted but i would recommend not to as by convention good practice we don't push `.env`
 
 <br>
 <hr>
