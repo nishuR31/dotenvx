@@ -2,7 +2,7 @@
 # dotenvx - Secure, Layered & Encrypted Environment Management
 
 [![npm version](https://img.shields.io/npm/v/@dotenvx/dotenvx?color=red&style=social&logo=dotenvx)](https://www.npmjs.com/package/@dotenvx/dotenvx)
-[![dotenvx](https://img.shields.io/badge/dotenvx-000000?logoColor=yellow&style=flat&logo=dotenv)](https://www.npmjs.com/package/@dotenvx/dotenvx)
+[![dotenvx](https://img.shields.io/badge/dotenvx-000000?logoColor=yellow&style=social&logo=dotenv)](https://www.npmjs.com/package/@dotenvx/dotenvx)
 [![GitHub stars](https://img.shields.io/github/stars/nishuR31/dotenvx?style=social)](https://github.com/nishuR31/dotenvx/stargazers)
 
 <br>
