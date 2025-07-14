@@ -144,6 +144,10 @@ console.log('Loaded:', process.env.API_KEY);
 .env.keys
 ```
 
+```bash
+npx @dotenvx/dotenvx ext gitignore --pattern .env.keys #to gitignore .env.keys
+```
+
 >  You can safely commit `.env.enc` to version control as it's encrypted.
 
 <br>
